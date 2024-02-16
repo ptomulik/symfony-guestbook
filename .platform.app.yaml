@@ -16,7 +16,7 @@ runtime:
         - pdo_pgsql
         - sodium
         - xsl
-        
+
 
 variables:
     php:
@@ -35,17 +35,17 @@ web:
 
 mounts:
     "/var": { source: local, source_path: var }
-    
+
 
 relationships:
     database: "database:postgresql"
-    
+
 hooks:
     build: |
         set -x -e
 
         curl -fs https://get.symfony.com/cloud/configurator | bash
-        
+
         NODE_VERSION=18 symfony-build
 
     deploy: |
