@@ -18,7 +18,9 @@ class GreetController extends AbstractController
 
         return new Response(<<<EOF
             <html>
-                $greet
+                <body>
+                    $greet
+                </body>
             </html>
             EOF
         );
